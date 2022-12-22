@@ -1,5 +1,6 @@
 package org.example;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class MyArrayListModel {
     private int size;                           // количесвто элементов
@@ -16,7 +17,7 @@ public class MyArrayListModel {
         elements = Arrays.copyOf(elements, capacity *= 1.5);
     }
 
-    public void add(String element) {           // метод по добавлению элемента в список
+    public void addArrList(String element) {           // метод по добавлению элемента в список
         if (size == capacity) {                 // проверка, заполнили ли мы список(массив "под капотом" точнее)
             grow();
         }
@@ -24,33 +25,35 @@ public class MyArrayListModel {
         size++;
     }
 
-    public void remove(String element) {        // метод по удалению элемента в списка
-        for (String arrElem : elements) {       // ищем заданый элемент для удаления
-            if (arrElem.equalsIgnoreCase(element)) {
-                arrElem = "";                   // приравниваем эту ячкйку в массиве к ""
-                size--;                         // уменьшаем счетчик количества элементов массива
-                break;                          // выходим из цикла
-            }
-        }
+    public void removeFromArrList(int index) {             // метод по удалению элемента в списка
+        Objects.checkIndex(index, size);
+        elements[index] = null;                              // приравниваем эту ячкйку в массиве к ""
+        size--;
         String[] elementsNewAfterRemove = new String[elements.length]; // создаем пустой массив для копирования данных не равныъ "" в него
         int countNewArr = 0;
         for (int i = 0; i < elements.length; i++) {
-            if (!elements[i].equalsIgnoreCase("")) {
+            if (elements[i]!=null) {
                     elementsNewAfterRemove[countNewArr] = elements[i];
-                    countNewArr++;              //финальное значение "каунтера" при последней итерации цикла будет равно текущему размеру size в строке 26.
+                    countNewArr++;                          //финальное значение "каунтера" при последней итерации цикла будет равно текущему размеру size в строке 26.
                 }
             }
             elements = elementsNewAfterRemove.clone();
         }
 
-    public void clear() {                       // "очистка" списка
+    public void clearArrList() {                       // "очистка" списка
         for(String elemToClear : elements) {
             elemToClear = "";
             size = 0;
         }
     }
 
-    public String getElement(int index) {       //  возвращает элемент под индексом
+    public String getElementArrList(int index) {       //  возвращает элемент под индексом
         return elements[index];
+    }
+
+    public void printArrayList() {
+        for (int i = 0; i < size; i++) {
+                System.out.println(elements[i]);
+        }
     }
 }
