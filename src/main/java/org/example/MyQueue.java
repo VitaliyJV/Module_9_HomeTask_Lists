@@ -3,18 +3,14 @@ package org.example;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class MyQueue {
-
+public class MyQueue <E>{
     private int size;
-    private int capacity;
-    private String[] elementsQ;
-
+    private static int capacity = 10;
+    transient Object[] elementsQ = new Object[capacity];
+    transient Object[] elementsQNewAfterRemove = new Object[capacity];
     public MyQueue() {
-        capacity = 10;
         size = 0;
-        elementsQ = new String[capacity];
     }
-
     private void grow() {
         elementsQ = Arrays.copyOf(elementsQ, capacity+=1);
     }
@@ -28,8 +24,8 @@ public class MyQueue {
     }
 
     public void clearQueue() {
-        for(String elemToClear : elementsQ) {
-            elemToClear = "";
+        for(Object elemToClear : elementsQ) {
+            elemToClear = null;
             size = 0;
         }
     }
@@ -44,7 +40,6 @@ public class MyQueue {
         }
         elementsQ[0] = null;
         size--;
-        String[] elementsQNewAfterRemove = new String[elementsQ.length];
         int countNewQueue = 0;
         for (int i = 0; i < elementsQ.length; i++) {
             if (elementsQ[i]!=null) {
@@ -55,18 +50,17 @@ public class MyQueue {
         elementsQ = elementsQNewAfterRemove.clone();
     }
 
-    public String peek() {
-        return elementsQ[0];
+    public E peek() {
+        return (E) elementsQ[0];
     }
 
-    public String pool() {
+    public E pool() {
         if (size == 0) {
             throw new RuntimeException("Nothing to pool! Queue is empty!");
         }
-        String forReturn = elementsQ[0];
+        var forReturn = elementsQ[0];
         elementsQ[0] = null;
         size--;
-        String[] elementsQNewAfterRemove = new String[elementsQ.length];
         int countNewQueue = 0;
         for (int i = 0; i < elementsQ.length; i++) {
             if (elementsQ[i]!=null) {
@@ -75,7 +69,7 @@ public class MyQueue {
             }
         }
         elementsQ = elementsQNewAfterRemove.clone();
-        return forReturn;
+        return (E) forReturn;
     }
 
     public void printMyQueue() {

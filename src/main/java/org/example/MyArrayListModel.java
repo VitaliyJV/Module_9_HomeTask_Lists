@@ -1,23 +1,23 @@
 package org.example;
 import java.util.Arrays;
 import java.util.Objects;
+import java.lang.Object;
 
-public class MyArrayListModel {
+public class MyArrayListModel <E> {
     private int size;                           // количесвто элементов
-    private int capacity;                       // вместимость списка
-    private String[] elements;                  // создаем "подкапотный" массив для списка
+    private static int capacity = 10;
+    transient Object[] elements = new Object[capacity];
+    transient Object[] elementsNewAfterRemove = new Object[capacity];
 
     public MyArrayListModel() {                 // конструктор
-        capacity = 10;
         size = 0;
-        elements = new String[capacity];
     }
 
     private void grow() {                       // метод grow(), который увеличивает вместимость списка в 1,5
         elements = Arrays.copyOf(elements, capacity *= 1.5);
     }
 
-    public void addArrList(String element) {           // метод по добавлению элемента в список
+    public void addArrList(Object element) {           // метод по добавлению элемента в список
         if (size == capacity) {                 // проверка, заполнили ли мы список(массив "под капотом" точнее)
             grow();
         }
@@ -29,7 +29,8 @@ public class MyArrayListModel {
         Objects.checkIndex(index, size);
         elements[index] = null;                              // приравниваем эту ячкйку в массиве к ""
         size--;
-        String[] elementsNewAfterRemove = new String[elements.length]; // создаем пустой массив для копирования данных не равныъ "" в него
+        //E [] elementsNewAfterRemove = new String[capacity]; // создаем пустой массив для копирования данных не равныъ "" в него
+
         int countNewArr = 0;
         for (int i = 0; i < elements.length; i++) {
             if (elements[i]!=null) {
@@ -41,14 +42,14 @@ public class MyArrayListModel {
         }
 
     public void clearArrList() {                       // "очистка" списка
-        for(String elemToClear : elements) {
-            elemToClear = "";
+        for(Object elemToClear : elements) {
+            elemToClear = null;
             size = 0;
         }
     }
 
-    public String getElementArrList(int index) {       //  возвращает элемент под индексом
-        return elements[index];
+    public E getElementArrList(int index) {       //  возвращает элемент под индексом
+        return (E) elements[index];
     }
 
     public void printArrayList() {

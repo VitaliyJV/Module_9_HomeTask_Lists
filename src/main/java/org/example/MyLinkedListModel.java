@@ -2,17 +2,17 @@ package org.example;
 
 import java.util.Objects;
 
-public class MyLinkedListModel {
+public class MyLinkedListModel <E>{
     private Node first = new Node();            //1й объект листа
     private Node last = new Node();             //последний объект листа
     private int countSize;
 
-    public static class Node {                  // "Нода"
+    public class Node {                  // "Нода"
         private Node prev;                      // ссылка на предыдущий объект
         private Node next;                      // ссылка на следующий объект
-        private String value;                   // целевое значение
+        private E value;                   // целевое значение
     }
-    public void addToLinkedList(String value) {
+    public void addToLinkedList(E value) {
         Node newNode = new Node();
         newNode.value = value;
         if (first.next == null && last.prev == null) {
@@ -44,7 +44,7 @@ public class MyLinkedListModel {
     public int sizeOfLinkedList() {
         return countSize;
     }
-    public String get(int index) {
+    public E get(int index) {
         Objects.checkIndex(index, countSize);
         Node next = first.next;
         if (index < 0) {
