@@ -59,7 +59,6 @@ public class MyLinkedListModel {
         return next.value;
     }
 
-
     @Override
     public String toString() {
         return "MyLinkedListModel{" +
