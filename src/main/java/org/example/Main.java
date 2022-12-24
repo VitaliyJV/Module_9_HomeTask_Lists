@@ -76,14 +76,25 @@ public class Main {
         stack.printMyStack();
         System.out.println();
 
-        MyHashMap <String, Integer> hashMap1 = new MyHashMap<>(new MyHashMap.Node[12]);
-        hashMap1.put("FirstKey", 1);
-        hashMap1.put("SecondKey", 2);
-        hashMap1.put("ThirdKey", 3);
-        hashMap1.put("ForthKey", 4);
-        hashMap1.put("FifthKey", 5);
-        hashMap1.put("SixKey", 6);
-        System.out.println(hashMap1.size());
+        MyHashMap<Integer, String> hashMapCustom = new MyHashMap<Integer, String>();
+        hashMapCustom.put(21, "Squad1");
+        hashMapCustom.put(25, "Squad2");
+        hashMapCustom.put(30, "Squad3");
+        hashMapCustom.put(33, "Squad4");
+        hashMapCustom.put(35, "Squad5");
+        hashMapCustom.put(37, "Squad6");
+        System.out.println("This is my source HashMap: ");
+        hashMapCustom.display();
+        System.out.print("\n" + "Source HashMap size is: ");
+        hashMapCustom.size();
+        hashMapCustom.remove(30);
+        System.out.println("\n" + "This is my HashMap after remove: ");
+        hashMapCustom.display();
+        System.out.print("\n" + "HashMap size now is: ");
+        hashMapCustom.size();
+        System.out.println("\n" + "Test of get method, lets get Value under key 25: " + hashMapCustom.get(25));
+        hashMapCustom.clear();
+        hashMapCustom.display();
 
     }
 }
