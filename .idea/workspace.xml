@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e608df-0cee-49d6-b442-756b1fbbdf75" name="Changes" comment="Start empty">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MyStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyArrayListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyLinkedListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyLinkedListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyHashMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

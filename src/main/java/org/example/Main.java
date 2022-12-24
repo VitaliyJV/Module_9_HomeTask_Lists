@@ -1,7 +1,5 @@
 package org.example;
 
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
         var arrayList1 = new MyArrayListModel<>();
@@ -77,6 +75,15 @@ public class Main {
         stack.clearStack();
         stack.printMyStack();
         System.out.println();
+
+        MyHashMap <String, Integer> hashMap1 = new MyHashMap<>(new MyHashMap.Node[12]);
+        hashMap1.put("FirstKey", 1);
+        hashMap1.put("SecondKey", 2);
+        hashMap1.put("ThirdKey", 3);
+        hashMap1.put("ForthKey", 4);
+        hashMap1.put("FifthKey", 5);
+        hashMap1.put("SixKey", 6);
+        System.out.println(hashMap1.size());
 
     }
 }
