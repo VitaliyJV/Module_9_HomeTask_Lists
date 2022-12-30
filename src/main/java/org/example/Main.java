@@ -2,22 +2,24 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        var arrayList1 = new MyArrayListModel<>();
-        arrayList1.addArrList("elem1");
-        arrayList1.addArrList("elem2");
-        arrayList1.addArrList("elem3");
-        arrayList1.addArrList("elem4");
-        System.out.println("This is my source ArrayList: ");
-        arrayList1.printArrayList();
-        arrayList1.removeFromArrList(2);
-        System.out.println("This is my ArrayList after remove: ");
-        arrayList1.printArrayList();
-        System.out.println("Test of method getElementArrList: ");
-        System.out.println(arrayList1.getElementArrList(1));
-        arrayList1.clearArrList();
-        System.out.println("At finish we have cleared our ArrayList:");
-        arrayList1.printArrayList();
-        System.out.println();
+        System.out.println("You can test this program by Unit tests");
+
+//        var arrayList1 = new MyArrayListModel<>();
+//        arrayList1.addArrList("elem1");
+//        arrayList1.addArrList("elem2");
+//        arrayList1.addArrList("elem3");
+//        arrayList1.addArrList("elem4");
+//        System.out.println("This is my source ArrayList: ");
+//        arrayList1.printArrayList();
+//        arrayList1.removeFromArrList(2);
+//        System.out.println("This is my ArrayList after remove: ");
+//        arrayList1.printArrayList();
+//        System.out.println("Test of method getElementArrList: ");
+//        System.out.println(arrayList1.getElementArrList(1));
+//        arrayList1.clearArrList();
+//        System.out.println("At finish we have cleared our ArrayList:");
+//        arrayList1.printArrayList();
+//        System.out.println();
 
         var listLinked1 = new MyLinkedListModel<>();
         listLinked1.addToLinkedList("item1");
@@ -76,25 +78,25 @@ public class Main {
         stack.printMyStack();
         System.out.println();
 
-        MyHashMap<Integer, String> hashMapCustom = new MyHashMap<Integer, String>();
-        hashMapCustom.put(21, "Squad1");
-        hashMapCustom.put(25, "Squad2");
-        hashMapCustom.put(30, "Squad3");
-        hashMapCustom.put(33, "Squad4");
-        hashMapCustom.put(35, "Squad5");
-        hashMapCustom.put(37, "Squad6");
-        System.out.println("This is my source HashMap: ");
-        hashMapCustom.display();
-        System.out.print("\n" + "Source HashMap size is: ");
-        hashMapCustom.size();
-        hashMapCustom.remove(30);
-        System.out.println("\n" + "This is my HashMap after remove: ");
-        hashMapCustom.display();
-        System.out.print("\n" + "HashMap size now is: ");
-        hashMapCustom.size();
-        System.out.println("\n" + "Test of get method, lets get Value under key 25: " + hashMapCustom.get(25));
-        hashMapCustom.clear();
-        hashMapCustom.display();
+//        MyHashMap<Integer, String> hashMapCustom = new MyHashMap<Integer, String>();
+//        hashMapCustom.put(21, "Squad1");
+//        hashMapCustom.put(25, "Squad2");
+//        hashMapCustom.put(30, "Squad3");
+//        hashMapCustom.put(33, "Squad4");
+//        hashMapCustom.put(35, "Squad5");
+//        hashMapCustom.put(37, "Squad6");
+//        System.out.println("This is my source HashMap: ");
+//        hashMapCustom.display();
+//        System.out.print("\n" + "Source HashMap size is: ");
+//        hashMapCustom.size();
+//        hashMapCustom.remove(30);
+//        System.out.println("\n" + "This is my HashMap after remove: ");
+//        hashMapCustom.display();
+//        System.out.print("\n" + "HashMap size now is: ");
+//        hashMapCustom.size();
+//        System.out.println("\n" + "Test of get method, lets get Value under key 25: " + hashMapCustom.get(25));
+//        hashMapCustom.clear();
+//        hashMapCustom.display();
 
     }
 }
